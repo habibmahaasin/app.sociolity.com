@@ -10,11 +10,9 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    type: {
-      control: "select",
-    },
-    size: { control: "select" },
+    loading: { control: "boolean" },
     disabled: { control: "boolean" },
+    children: { control: "text" },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -24,35 +22,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    type: "primary",
+    loading: false,
+    disabled: false,
     children: "Primary Button",
-  },
-};
-
-export const Default: Story = {
-  args: {
-    type: "default",
-    children: "Default Button",
-  },
-};
-
-export const Dashed: Story = {
-  args: {
-    type: "dashed",
-    children: "Dashed Button",
-  },
-};
-
-export const Link: Story = {
-  args: {
-    type: "link",
-    children: "Link Button",
-  },
-};
-
-export const Text: Story = {
-  args: {
-    type: "text",
-    children: "Text Button",
   },
 };

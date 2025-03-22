@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@utility btn {
+  @apply rounded-full;
+}
+
+@utility input {
+  @apply rounded-full;
+}
+
+@utility badge {
+  @apply rounded-full h-7 px-6;
+}
+
+@utility card {
+  @apply rounded-xl;
+}
+
+:root {
+  --color-primary: #02aba6;
+  --color-secondary: #025286;
+  --color-accent: #dbefde;
+}
+
+.scrollable-content {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  display: none;
+}
