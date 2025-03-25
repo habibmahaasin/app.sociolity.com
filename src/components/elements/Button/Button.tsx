@@ -1,5 +1,6 @@
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
+import "./button.css";
 
 export interface ButtonElementProps {
   children: React.ReactNode;
@@ -38,7 +39,7 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
     <Button
       color={color}
       radius={radius}
-      className={className}
+      className={`${className} btn-${color}`}
       variant={variant}
       isLoading={isLoading}
       isIconOnly={isIconOnly}

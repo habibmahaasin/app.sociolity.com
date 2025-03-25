@@ -11,5 +11,7 @@ function RouteComponent() {
 
   // if (postLists.isLoading) return <div>Loading...</div>;
 
-  return <div className="w-full h-[200px] bg-black p-4"></div>;
+  return (
+    <div className="w-full h-[200px] bg-black p-4 text-secondary">adadada</div>
+  );
 }
