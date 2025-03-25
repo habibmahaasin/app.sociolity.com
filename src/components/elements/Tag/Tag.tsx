@@ -1,48 +1,45 @@
-import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
-import "./button.css";
+import "./tag.css";
+import { Chip } from "@heroui/chip";
 
-export interface ButtonElementProps {
+export interface TagElementProps {
   children: React.ReactNode;
   iconStart?: string;
   iconEnd?: string;
   color?: "primary" | "secondary" | "success" | "warning" | "danger";
   radius?: "none" | "sm" | "md" | "lg" | "full";
+  size?: "sm" | "md" | "lg";
   className?: string;
   variant?:
     | "solid"
-    | "ghost"
     | "flat"
     | "bordered"
     | "light"
     | "faded"
     | "shadow"
+    | "dot"
     | undefined;
-  isLoading?: boolean;
-  isIconOnly?: boolean;
   onClick?: () => void;
 }
 
-const ButtonElement: React.FC<ButtonElementProps> = ({
+const TagElement: React.FC<TagElementProps> = ({
   children,
   iconStart,
   iconEnd,
   color = "primary",
   radius = "full",
-  className,
+  size = "sm",
+  className = "px-3",
   variant = "solid",
-  isLoading = false,
-  isIconOnly = false,
   onClick,
 }) => {
   return (
-    <Button
+    <Chip
       color={color}
+      size={size}
       radius={radius}
-      className={`${className} btn-${color} px-6 h-8 border`}
+      className={`${className}`}
       variant={variant}
-      isLoading={isLoading}
-      isIconOnly={isIconOnly}
       startContent={
         iconStart ? <Icon icon={iconStart} width="20" height="20" /> : null
       }
@@ -52,8 +49,8 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
       onClick={onClick}
     >
       {children}
-    </Button>
+    </Chip>
   );
 };
 
-export default ButtonElement;
+export default TagElement;
