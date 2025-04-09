@@ -39,7 +39,7 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
     <Button
       color={color}
       radius={radius}
-      className={`${className} btn-${color} px-6 h-8 border`}
+      className={`${className} btn-${color} h-8 ${variant != "light" && "border"}`}
       variant={variant}
       isLoading={isLoading}
       isIconOnly={isIconOnly}
